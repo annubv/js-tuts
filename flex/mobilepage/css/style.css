@@ -1,0 +1,32 @@
+.small{
+    font-size: 10px;
+}
+
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    position: relative;
+}
+
+.fccol{
+    flex-direction: column;
+}
+
+.fcnav{
+    background-color: black;
+    justify-content: space-between;
+}
+
+.whitetext{
+    color: white;
+}
+
+.flex-item{
+    padding: 20px;
+}
+
+.tint{
+    filter: brightness(70%);
+}
