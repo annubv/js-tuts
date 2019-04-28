@@ -1,29 +1,10 @@
-//queue implementation
-
 var queue = [];
-queue_front = 0;
-queue_end = 0;
-
-function enqueue(v) {
-  queue.push(v);
-  queue_end++;
-}
-
-function dequeue() {
-  var index = queue_front;
-  queue_front++;
-  return queue[index];
-}
-
-//end of queue implementation
-
 var result = [];
 var admat = [[0, 1, 0, 0], [0, 1, 1, 1], [1, 0, 0, 1], [0, 0, 1, 0]]; //adjacency matrix
 var n = 4; //no, of nodes
 var startingnode = 2;
 
 bfs(admat, n, startingnode);
-
 function bfs(a, n, s) {
   var visited = [];
   queue_front = 0;
@@ -32,15 +13,16 @@ function bfs(a, n, s) {
     visited.push(0);
   }
   visited[s] = 1;
-  enqueue(s);
+  queue.push(s);
   result.push(s);
 
-  while (queue_front <= queue_end) {
-    i = dequeue();
+  while (queue.length > 0) {
+    queue.shift;
+    i = queue.pop();
     for (var j = 0; j < n; j++) {
       if (visited[j] == 0 && a[i][j] == 1) {
         visited[j] = 1;
-        enqueue(j);
+        queue.push(j);
         result.push(j);
       }
     }
